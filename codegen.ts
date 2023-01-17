@@ -8,6 +8,14 @@ const config: CodegenConfig = {
       preset: "client",
       plugins: [],
     },
+    "./src/gql/mocks/handlers.ts": {
+      preset: "import-types", // 別ファイルから型をインポートするプリセット
+      presetConfig: {
+        typesPath: "./../graphql",
+      },
+      plugins: ["typescript-msw"], // オペレーション定義からMSWのハンドラを生成するプラグイン
+      config: {},
+    },
   },
 };
 
