@@ -13,8 +13,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
-    "\n  query allFilmsWithVariablesQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          ...FilmItem\n        }\n      }\n    }\n  }\n": types.AllFilmsWithVariablesQueryDocument,
-    "\n  fragment FilmItem on Film {\n    id\n    title\n    releaseDate\n    producers\n  }\n": types.FilmItemFragmentDoc,
+    "fragment FilmItem on Film {\n  id\n  title\n  releaseDate\n  producers\n}": types.FilmItemFragmentDoc,
+    "query allFilmsQuery($first: Int!, $last: Int!) {\n  allFilms(first: $first, last: $last) {\n    edges {\n      node {\n        ...FilmItem\n      }\n    }\n  }\n}": types.AllFilmsQueryDocument,
 };
 
 /**
@@ -34,11 +34,11 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query allFilmsWithVariablesQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          ...FilmItem\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query allFilmsWithVariablesQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          ...FilmItem\n        }\n      }\n    }\n  }\n"];
+export function graphql(source: "fragment FilmItem on Film {\n  id\n  title\n  releaseDate\n  producers\n}"): (typeof documents)["fragment FilmItem on Film {\n  id\n  title\n  releaseDate\n  producers\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  fragment FilmItem on Film {\n    id\n    title\n    releaseDate\n    producers\n  }\n"): (typeof documents)["\n  fragment FilmItem on Film {\n    id\n    title\n    releaseDate\n    producers\n  }\n"];
+export function graphql(source: "query allFilmsQuery($first: Int!, $last: Int!) {\n  allFilms(first: $first, last: $last) {\n    edges {\n      node {\n        ...FilmItem\n      }\n    }\n  }\n}"): (typeof documents)["query allFilmsQuery($first: Int!, $last: Int!) {\n  allFilms(first: $first, last: $last) {\n    edges {\n      node {\n        ...FilmItem\n      }\n    }\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

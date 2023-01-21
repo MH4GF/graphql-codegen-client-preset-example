@@ -1,0 +1,9 @@
+query allFilmsQuery($first: Int!, $last: Int!) {
+  allFilms(first: $first, last: $last) {
+    edges {
+      node {
+        ...FilmItem
+      }
+    }
+  }
+}

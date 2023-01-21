@@ -1,0 +1,4 @@
+import * as Types from '~/gql/graphql';
+
+import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
+export const FilmItemFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"FilmItem"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Film"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"releaseDate"}},{"kind":"Field","name":{"kind":"Name","value":"producers"}}]}}]} as unknown as DocumentNode<Types.FilmItemFragment, unknown>;

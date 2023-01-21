@@ -1,9 +1,9 @@
-import { mockAllFilmsWithVariablesQueryQuery } from "~/App.generated";
-import { FilmFragment } from "../Film";
+import { mockAllFilmsQueryQuery } from "~/allFilmsQuery.generated";
+import { FilmItemFragmentDoc } from "~/FilmItem.generated";
 import { makeFragmentData } from "../gql";
 
 export const handlers = [
-  mockAllFilmsWithVariablesQueryQuery((req, res, ctx) => {
+  mockAllFilmsQueryQuery((req, res, ctx) => {
     return res(
       ctx.data({
         allFilms: {
@@ -15,7 +15,7 @@ export const handlers = [
                   title: "A New Hope",
                   releaseDate: "1977-05-25",
                 },
-                FilmFragment
+                FilmItemFragmentDoc
               ),
             },
           ],
