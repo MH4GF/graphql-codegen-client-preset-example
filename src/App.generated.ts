@@ -1,4 +1,4 @@
-import * as Types from './../graphql';
+import * as Types from '~/gql/graphql';
 
 import { graphql, ResponseResolver, GraphQLRequest, GraphQLContext } from 'msw'
 

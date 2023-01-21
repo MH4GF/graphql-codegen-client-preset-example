@@ -1,6 +1,6 @@
+import { mockAllFilmsWithVariablesQueryQuery } from "~/App.generated";
 import { FilmFragment } from "../Film";
 import { makeFragmentData } from "../gql";
-import { mockAllFilmsWithVariablesQueryQuery } from "../gql/mocks/handlers";
 
 export const handlers = [
   mockAllFilmsWithVariablesQueryQuery((req, res, ctx) => {

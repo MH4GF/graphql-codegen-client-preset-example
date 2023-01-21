@@ -8,13 +8,16 @@ const config: CodegenConfig = {
       preset: "client",
       plugins: [],
     },
-    "./src/gql/mocks/handlers.ts": {
-      preset: "import-types", // 別ファイルから型をインポートするプリセット
+    "./src/": {
+      preset: "near-operation-file",
       presetConfig: {
-        typesPath: "./../graphql",
+        extension: ".generated.ts",
+        baseTypesPath: "~~/gql/graphql",
       },
       plugins: ["typescript-msw"], // オペレーション定義からMSWのハンドラを生成するプラグイン
-      config: {},
+      config: {
+        typesPrefix: "Types.",
+      },
     },
   },
 };
